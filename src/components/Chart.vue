@@ -48,6 +48,7 @@ export default {
             }
         }
     },
+
     watch: {
         //观察option的变化
         option: {
@@ -65,5 +66,6 @@ export default {
             deep: true //对象内部属性的监听，关键。
         }
     }
+    
 };
 </script>

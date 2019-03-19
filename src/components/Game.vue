@@ -363,6 +363,7 @@ export default {
             this.realTimeBuy += Math.floor(5 - Math.random() * 10);
             this.realTimeSell += Math.floor(5 - Math.random() * 10);
         },
+
         initDemandChartAndOrder() {
             //init demand chart
             for (let i = 0; i < this.demands.length; i++) {
@@ -638,7 +639,6 @@ h1{
 .i-icon {
     display: inline-block;
     font-family: "custom-font" !important;
-    /* speak: none; */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -667,7 +667,6 @@ h1{
 .grid-content {
     border-radius: 15px;
     min-height: 600px;
-    /* vertical-align: bottom; */
 }
 </style>
 

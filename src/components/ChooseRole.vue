@@ -1,108 +1,86 @@
 <template>
-    <div class = "bg">
-        <!-- ghost -->
-        <div class="box">
-            <div class="box__ghost">
-            <div class="symbol"></div>
-            <div class="symbol"></div>
-            <div class="symbol"></div>
-            <div class="symbol"></div>
-            <div class="symbol"></div>
-            <div class="symbol"></div>
-    
+  <div class = "bg">
+    <!-- ghost -->
+    <div class="box">
+      <div class="box__ghost">
+        <div class="symbol"></div>
+        <div class="symbol"></div>
+        <div class="symbol"></div>
+        <div class="symbol"></div>
+        <div class="symbol"></div>
+        <div class="symbol"></div>
         <div class="box__ghost-container">
-            <div class="box__ghost-eyes">
+          <div class="box__ghost-eyes">
             <div class="box__eye-left"></div>
-        <div class="box__eye-right"></div>
-        </div>
-        <div class="box__ghost-bottom">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+            <div class="box__eye-right"></div>
+          </div>
+          <div class="box__ghost-bottom">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          </div>
         </div>
         <div class="box__ghost-shadow"></div>
+      </div>
     </div>
-  
-    </div>
-        <!-- card -->
+      <!-- card -->
+      <div class="boxes">
         <div class = "box1">
-        <div class="roletitle">Manufacturer</div>
-        <br/>
-        <ul class="roleDes">
-            <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">4000$</span></li>
-            <li style="margin-bottom:5px">Upstream of this supply chain</li>
-            <li style="margin-bottom:5px">The orders received fluctuate the most</li>
-        </ul>
-        <br/>
-        <nav>
-            <router-link :to="{path:'/game', query:{role:'Manufacturer'}}">
-            <div class="box__description">
-                <a href="#" class="box__button3">Hard</a>
-            </div>
-            </router-link>
-        </nav>
+          <div class="roletitle">Manufacturer</div>
+          <br/>
+          <ul class="roleDes">
+              <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">4000$</span></li>
+              <li style="margin-bottom:5px">Upstream of this supply chain</li>
+              <li style="margin-bottom:5px">The orders received fluctuate the most</li>
+          </ul>
+          <br/>
+          <nav>
+              <router-link :to="{path:'/game', query:{role:'Manufacturer'}}">
+              <div class="box__description">
+                  <a href="#" class="box__button3">Hard</a>
+              </div>
+              </router-link>
+          </nav>
         </div>
         <div class = "box2">
-        <div class="roletitle">Supplier</div>
-        <br/>
-        <ul class="roleDes">
-            <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">3500$</span></li>
-            <li style="margin-bottom:5px">Midstream of this supply chain</li>
-            <li style="margin-bottom:5px">The orders received fluctuate a little</li>
-        </ul>
-        <br/>
-        <nav>
-            <router-link :to="{path:'/game', query:{role:'Supplier'}}">
-            <div class="box__description">
-                <a href="#" class="box__button2">Median</a>
-            </div>
-            </router-link>
-        </nav>
+          <div class="roletitle">Supplier</div>
+          <br/>
+          <ul class="roleDes">
+              <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">3500$</span></li>
+              <li style="margin-bottom:5px">Midstream of this supply chain</li>
+              <li style="margin-bottom:5px">The orders received fluctuate a little</li>
+          </ul>
+          <br/>
+          <nav>
+              <router-link :to="{path:'/game', query:{role:'Supplier'}}">
+              <div class="box__description">
+                  <a href="#" class="box__button2">Median</a>
+              </div>
+              </router-link>
+          </nav>
         </div>
         <div class = "box3">
-        <div class="roletitle">Retailer</div>
-        <br/>
-        <ul class="roleDes">
-            <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">3000$</span></li>
-            <li style="margin-bottom:5px">Downstream of this supply chain</li>
-            <li style="margin-bottom:5px">Receive orders from customers directly</li>
-        </ul>
-        <br/>
-        <nav>
+          <div class="roletitle">Retailer</div>
+          <br/>
+          <ul class="roleDes">
+              <li style="margin-bottom:5px">Inital balance : <span style="color:rgb(255, 255, 255)">3000$</span></li>
+              <li style="margin-bottom:5px">Downstream of this supply chain</li>
+              <li style="margin-bottom:5px">Receive orders from customers directly</li>
+          </ul>
+          <br/>
+          <nav>
             <router-link :to="{path:'/game', query:{role:'Retailer'}}">
             <div class="box__description">
                 <a href="#" class="box__button1">Easy</a>
             </div>
             </router-link>
-        </nav>
+          </nav>
         </div>
-
-        <!-- <div class = "box4">
-        <div class="roletitle">Rank</div>
-        <br/>
-        <ul>
-            <li>Role description</li>
-            <li>Role description</li>
-            <li>Role description</li>
-        </ul>
-        <br/>
-        <nav>
-            <router-link to="/rank">
-            <div class="box__description">
-                <a href="#" class="box__button4">Check out</a>
-            </div>
-            </router-link>
-        </nav>
-        <router-view/>
-        </div> -->
-        
-    </div>
+      </div>
+  </div>
 </template>
-
-
 
 <script>
 export default {
@@ -120,13 +98,17 @@ export default {
 </script>
 
 <style scoped>
+.boxes{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .roleDes{
   font-size: medium;
   color: rgb(184, 183, 209);
   margin: 0px;
 }
 .roletitle{
-    /* font-family: "Helvetica"; */
     color: rgb(255, 255, 255); 
     font-size:x-large;
 }
