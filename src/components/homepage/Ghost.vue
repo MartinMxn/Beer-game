@@ -188,6 +188,7 @@ export default {
   margin: 0 10px;
   position: absolute;
   left: -33px;
+  top: -5px;
 }
 .box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
   width: 12px;
@@ -197,6 +198,7 @@ export default {
   margin: 0 10px;
   position: absolute;
   right: 33px;
+  top: -5px;
 }
 .box .box__ghost .box__ghost-container .box__ghost-bottom {
   display: flex;
