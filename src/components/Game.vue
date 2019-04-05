@@ -10,9 +10,6 @@
             </router-link>
         </div>
 
-        <!-- <ul>
-            <li v-for="demand in demands">{{demand.quality}}</li>
-        </ul>-->
         <!-- top four cards -->
         <div class="row mt-3">
             <div id="fourCard" class="col-12 col-lg-6 col-xl-3">
@@ -205,7 +202,7 @@
 
 <script>
 import http from "../http-common.js";
-import Chart from "../components/Chart";
+import Chart from "../components/Chart.vue";
 export default {
     name: "game",
     data() {
@@ -306,7 +303,6 @@ export default {
             http.get("/game")
                 .then(response => {
                     this.demands = response.data;
-                    console.log(response.data);
                     //axios always after mounted
                     this.initDemandChartAndOrder();
                 })
@@ -317,8 +313,6 @@ export default {
             http.get("/game/tip")
                 .then(response => {
                     this.tips = response.data;
-                    console.log(response.data);
-                    console.log(this.tips.length);
                     var numOfTip = Math.floor(
                         Math.random() * this.tips.length - 1 + 1
                     );
