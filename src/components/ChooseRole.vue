@@ -16,7 +16,7 @@
         button="button2"
         role_level="Median"
         role_title="Supplier"
-        role_money="3000"
+        role_money="3500"
         role_dec2="Midstream of this supply chain"
         role_dec3="The orders received fluctuate moderately"
       />
@@ -24,7 +24,7 @@
         button="button1"
         role_level="Easy"
         role_title="Retailer"
-        role_money="2000"
+        role_money="3000"
         role_dec2="Downstream of this supply chain"
         role_dec3="Receive orders from customers directly"
       />
