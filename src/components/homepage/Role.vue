@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "role",
+  name: "Role",
   props: [
     "button",
     "role_level",

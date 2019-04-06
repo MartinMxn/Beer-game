@@ -1,10 +1,10 @@
 <template>
   <div class="bg">
     <!-- ghost animation -->
-    <ghost/>
+    <Ghost/>
     <!-- role cards -->
     <div class="cards">
-      <role
+      <Role
         button="button3"
         role_level="Hard"
         role_title="Manufacturer"
@@ -12,7 +12,7 @@
         role_dec2="Upstream of this supply chain"
         role_dec3="The orders received fluctuate the most"
       />
-      <role
+      <Role
         button="button2"
         role_level="Median"
         role_title="Supplier"
@@ -20,7 +20,7 @@
         role_dec2="Midstream of this supply chain"
         role_dec3="The orders received fluctuate moderately"
       />
-      <role
+      <Role
         button="button1"
         role_level="Easy"
         role_title="Retailer"
@@ -33,13 +33,13 @@
 </template>
 
 <script>
-import ghost from "../components/homepage/Ghost.vue";
-import role from "../components/homepage/Role.vue";
+import Ghost from "../components/homepage/Ghost.vue";
+import Role from "../components/homepage/Role.vue";
 export default {
   name: "chooserole",
   components: {
-    ghost,
-    role
+    Ghost,
+    Role
   }
 };
 </script>
