@@ -130,11 +130,11 @@ export default {
   background: rgb(255, 94, 83);
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
   .box {
     height: 200px;
     margin: 5px auto;
-    width: 50vw;
+    width: 60vw;
     padding: 0;
     word-break: break-all;
   }
@@ -164,6 +164,43 @@ export default {
   }
   .button{
     width: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    height: 200px;
+    margin: 5px auto;
+    width: 90vw;
+    padding: 0;
+    word-break: break-all;
+  }
+
+  .roletitle {
+    color: rgb(255, 255, 255);
+    font-size: large;
+    margin-bottom: 2px;
+  }
+
+  .roleDes {
+    font-size: medium;
+    color: rgb(184, 183, 209);
+    margin: 0px;
+  }
+
+  .roleDes li {
+    list-style: none;
+    margin: 0;
+  }
+  nav{
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -15px;
+  }
+  .button {
+    width: 60vw;
   }
 }
 </style>
