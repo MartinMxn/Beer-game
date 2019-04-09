@@ -1,7 +1,7 @@
 <template>
   <div class="top-bar">
-    <span class="top-price">Real-time Price : Buy {{realTimeBuy}}$/case. Sell {{realTimeSell}}$/case</span>
-    <span class="top-tips">Tips: {{curTip}}</span>
+    <div class="top-price">Real-time Price : Buy {{realTimeBuy}}$/case. Sell {{realTimeSell}}$/case</div>
+    <div class="top-tips">Tips: {{curTip}}</div>
     <router-link to="/">
       <Icon type="md-arrow-round-back" class="backIcon"/>
     </router-link>
@@ -26,9 +26,14 @@ export default {
   line-height: 40px;
 }
 
+.top-price{
+  display: inline;
+}
+
 .top-tips {
-  margin-left: 120px;
   font-size: medium;
+  display: inline;
+  margin-left: 10%;
 }
 
 .backIcon {
@@ -39,10 +44,26 @@ export default {
 
 @media screen and (max-width: 768px) {
   .top-bar {
-    line-height: 20px;
+    height: 70px;
+    line-height: 10px;
+    text-align: center;
   }
+  
   .top-price {
     font-size: small;
+    margin: 0 auto;
+  }
+
+  .top-tips{
+    font-size: small;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    width: 80%;
+  }
+
+  router-link{
+    display: inline;
   }
 }
 

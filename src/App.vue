@@ -50,7 +50,6 @@ export default {
       this.introDia = false;
     }
   },
-  created() {},
   mounted() {
     setTimeout(() => {
       this.introDia = true;

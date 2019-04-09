@@ -1,68 +1,32 @@
 <template>
   <div class="bg">
     <TopBar :realTimeBuy="realTimeBuy" :realTimeSell="realTimeSell" :curTip="curTip"/>
-    <div class="row mt-2 mb-1">
-      <!-- top four cards -->
-      <div id="fourCard" class="col-6 col-xl-3">
-        <div class="card bg-success">
-          <div class="card-body">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="text-white">Game Round</p>
-                <h4 class="text-white line-height-5">{{round}} of 12</h4>
-              </div>
-              <div class>
-                <Icon type="md-time" size="50" color="white"></Icon>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="fourCard" class="col-6 col-xl-3">
-        <div class="card bg-primary">
-          <div class="card-body">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="text-white">Total Balance</p>
-                <h4 class="text-white line-height-5">${{balance}}</h4>
-              </div>
-              <div class>
-                <Icon type="md-checkmark-circle-outline" size="50" color="white"></Icon>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="fourCard" class="col-6 col-xl-3">
-        <div class="card bg-danger">
-          <div class="card-body">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="text-white">Inventory(20$/round)</p>
-                <h4 class="text-white line-height-5">{{inventory}}</h4>
-              </div>
-              <div class>
-                <Icon type="md-home" size="50" color="white"></Icon>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="fourCard" class="col-6 col-xl-3">
-        <div class="card bg-secondary">
-          <div class="card-body">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="text-white">Backlog(40$/round)</p>
-                <h4 class="text-white line-height-5">{{backlog}}</h4>
-              </div>
-              <div class>
-                <Icon type="md-clipboard" size="50" color="white"></Icon>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- four cards -->
+    <div class="row mt-2 mb-2">
+      <Cards
+        cardColor="card bg-success"
+        cardTitle="Round(12 total)"
+        :cardNumber="round"
+        cardIcon="md-time"
+      />
+      <Cards
+        cardColor="card bg-primary"
+        cardTitle="Balance($)"
+        :cardNumber="balance"
+        cardIcon="md-checkmark-circle-outline"
+      />
+      <Cards
+        cardColor="card bg-danger"
+        cardTitle="Inventory(20$/round)"
+        :cardNumber="inventory"
+        cardIcon="md-home"
+      />
+      <Cards
+        cardColor="card bg-secondary"
+        cardTitle="Backlog(40$/round)"
+        :cardNumber="backlog"
+        cardIcon="md-clipboard"
+      />
     </div>
 
     <!-- two boards -->
@@ -180,9 +144,9 @@
       @on-ok="infoDialogOk"
       @on-cancel="infoDialogCancel"
     >
-      <div
-        class
-      >You are {{this.role}}, you need to pay {{this.priceOfInfo}}$ to visualize last 6 rounds demand</div>
+      <div>
+        You are {{this.role}}, you need to pay {{this.priceOfInfo}}$ to visualize last 6 rounds demand
+      </div>
     </Modal>
   </div>
 </template>
@@ -191,6 +155,7 @@
 import http from "../http-common.js";
 import Chart from "../components/Chart.vue";
 import TopBar from "../components/gamepage/TopBar.vue";
+import Cards from "../components/gamepage/Card.vue";
 export default {
   name: "game",
   data() {
@@ -284,7 +249,8 @@ export default {
   },
   components: {
     Chart,
-    TopBar
+    TopBar,
+    Cards
   },
   methods: {
     getDataAndInitChart() {
@@ -534,9 +500,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  border-style: dashed;
-}
 .infoB {
   margin-left: 300px;
 }
@@ -569,56 +532,11 @@ h1 {
   text-align: center;
   height: 330px;
 }
-.card {
-  border-radius: 25px;
-}
-#fourCard {
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  -ms-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  transition: all 0.25s;
-}
-#fourCard :hover {
-  -webkit-transform: scale(1.02, 1.02);
-  -moz-transform: scale(1.02, 1.02);
-  -ms-transform: scale(1.02, 1.02);
-  -o-transform: scale(1.02, 1.02);
-  transform: scale(1.02, 1.02);
-}
-.gradient-ibiza {
-  background: #ee0979;
-  background: -webkit-linear-gradient(45deg, #ee0979, #ff6a00) !important;
-  background: linear-gradient(45deg, #ee0979, #ff6a00) !important;
-}
-.cardTitle {
-  font-size: large;
-  height: 24px;
-}
-
-.card1Col {
-  text-align: center;
-  background: rgb(45, 140, 240);
-}
 
 .bg {
   background-color: #eee;
   height: 100%;
-  position: fixed;
   width: 100%;
-}
-.i-icon {
-  display: inline-block;
-  font-family: "custom-font" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  text-rendering: auto;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle;
 }
 .el-row {
   margin-bottom: 20px;
@@ -626,18 +544,8 @@ h1 {
 .el-col {
   border-radius: 4px;
 }
-.bg-purple-dark {
-  background: #5eb6ff;
-}
 .bg-purple {
   background: #e5e9f2;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
-.grid-content {
-  border-radius: 15px;
-  min-height: 600px;
 }
 </style>
 

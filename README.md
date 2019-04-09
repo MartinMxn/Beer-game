@@ -1,6 +1,6 @@
-# beergame
+# Beergame
 
-> A Vue.js project
+> An experiential learning business simulation game created originally by a group of professors at MIT Sloan School of Management in early 1960s to demonstrate a number of key principles of supply chain management.
 
 ## Build Setup
 
@@ -17,5 +17,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
